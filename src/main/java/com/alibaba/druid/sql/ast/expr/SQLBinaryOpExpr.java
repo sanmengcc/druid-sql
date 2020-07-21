@@ -39,6 +39,8 @@ public class SQLBinaryOpExpr extends SQLExprImpl implements SQLReplaceable, Seri
     protected SQLBinaryOperator operator;
     protected String            dbType;
 
+    private String field;
+
     private boolean             bracket  = false;
 
     // only for parameterized output
@@ -706,5 +708,13 @@ public class SQLBinaryOpExpr extends SQLExprImpl implements SQLReplaceable, Seri
         }
 
         return new SQLBinaryOpExpr(a, SQLBinaryOperator.BooleanOr, b);
+    }
+
+    public String getField() {
+        return field;
+    }
+
+    public void setField(String field) {
+        this.field = field;
     }
 }
